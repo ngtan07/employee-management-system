@@ -1,0 +1,23 @@
+package net.javaguides.esm.service.impl;
+
+import lombok.AllArgsConstructor;
+import net.javaguides.esm.dto.EmployeeDto;
+import net.javaguides.esm.entity.Employee;
+import net.javaguides.esm.mapper.EmployeeMapper;
+import net.javaguides.esm.repository.EmployeeRepository;
+import net.javaguides.esm.service.EmployeeService;
+import org.springframework.stereotype.Service;
+
+@Service
+@AllArgsConstructor
+public class EmployeeServiceImpl implements EmployeeService {
+
+    private EmployeeRepository employeeRepository;
+
+    @Override
+    public EmployeeDto createEmployee(EmployeeDto employeeDto) {
+        Employee employee = EmployeeMapper.mapToEmployee(employeeDto);
+        Employee savedEmployee = employeeRepository.save(employee);
+        return EmployeeMapper.mapToEmployeeDto(savedEmployee);
+    }
+}
