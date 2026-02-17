@@ -12,6 +12,10 @@ dist
 dist-ssr
 *.local
 
+# Chặn bộ nhớ đệm của Vite
+.vite/
+**/.vite/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
