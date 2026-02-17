@@ -32,10 +32,6 @@ build/
 ### VS Code ###
 .vscode/
 
-# Bỏ qua thư mục cấu hình của IntelliJ
-.idea/
-**/.idea/
-
 ### Spring Boot ###
 application.properties
 src/main/resources/application.properties
